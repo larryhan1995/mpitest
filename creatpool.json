@@ -1,0 +1,26 @@
+{
+  "id": "mypool",
+  "vmSize": "standard_a1_v2",
+  "virtualMachineConfiguration": {
+    "imageReference": {
+      "publisher": "Canonical",
+      "offer": "0001-com-ubuntu-server-focal",
+      "sku": "20_04-lts",
+      "version": "latest"
+    },
+    "nodeAgentSKUId": "batch.node.ubuntu 20.04"
+  },
+  
+  "targetDedicatedNodes": 1,
+  "targetLowPriorityNodes": 0,
+  "taskSlotsPerNode": 4,
+  "taskSchedulingPolicy": {
+    "nodeFillType": "spread"
+  },
+  "startTask": {
+    "commandLine": "/bin/bash -c 'apt-get update; apt-get -y install openmpi-bin libopenmpi-dev'",
+    "maxTaskRetryCount": 0,
+    "waitForSuccess": true
+  },
+  "enableInterNodeCommunication": true
+}
