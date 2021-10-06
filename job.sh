@@ -1,3 +1,4 @@
+cat /proc/cpuinfo
 wget http://github.com/larryhan1995/mpitest/raw/main/hello-world.c 
 #wget http://github.com/larryhan1995/mpitest/raw/main/hostfile
 mpicc hello-world.c -o hello-world 
