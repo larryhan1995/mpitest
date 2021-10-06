@@ -1,5 +1,5 @@
 wget http://github.com/larryhan1995/mpitest/raw/main/hello-world.c 
-wget http://github.com/larryhan1995/mpitest/raw/main/hostfile
+#wget http://github.com/larryhan1995/mpitest/raw/main/hostfile
 mpicc hello-world.c -o hello-world 
 echo "Run single process:"
 ./hello-world > output1.txt;
@@ -21,4 +21,4 @@ echo "The AZ_BATCH_NODE_MOUNTS_DIR: $AZ_BATCH_NODE_MOUNTS_DIR"
 echo "Run two processes:"
 # Run two node MPI tests
 #mpirun -np 2 --host $src,$dst --map-by node ./hello-world > output2.txt
-mpirun -np 2 -host hostfile ./hello-world > output2.txt
+mpirun -np 2 ./hello-world > output2.txt
