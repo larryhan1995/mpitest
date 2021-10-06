@@ -6,6 +6,8 @@ echo "Run single process:"
 # Create host file
 batch_hosts=hosts.batch
 rm -rf $batch_hosts
+echo "The AZ_BATCH_NODE_LIST: $AZ_BATCH_NODE_LIST"
+echo "The AZ_BATCH_HOST_LIST: $AZ_BATCH_HOST_LIST"
 IFS=';' read -ra ADDR <<< "$AZ_BATCH_NODE_LIST"
 for i in "${ADDR[@]}"; do echo $i >> $batch_hosts;done
 # Determine hosts to run on 
