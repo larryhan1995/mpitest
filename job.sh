@@ -22,4 +22,4 @@ echo "The AZ_BATCH_NODE_MOUNTS_DIR: $AZ_BATCH_NODE_MOUNTS_DIR"
 echo "Run two processes:"
 # Run two node MPI tests
 #mpirun -np 2 --host $src,$dst --map-by node ./hello-world > output2.txt
-mpirun -np 2 -ppn 2 ./hello-world > output2.txt
+mpirun -np 2 -N 2 ./hello-world > output2.txt
