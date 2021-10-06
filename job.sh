@@ -9,6 +9,7 @@ rm -rf $batch_hosts
 echo "The AZ_BATCH_NODE_LIST: $AZ_BATCH_NODE_LIST"
 echo "The AZ_BATCH_HOST_LIST: $AZ_BATCH_HOST_LIST"
 echo "The AZ_BATCH_TASK_SHARED_DIR: $AZ_BATCH_TASK_SHARED_DIR"
+echo "The AZ_BATCH_NODE_MOUNTS_DIR: $AZ_BATCH_NODE_MOUNTS_DIR"
 IFS=';' read -ra ADDR <<< "$AZ_BATCH_NODE_LIST"
 for i in "${ADDR[@]}"; do echo $i >> $batch_hosts;done
 # Determine hosts to run on 
