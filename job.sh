@@ -4,19 +4,20 @@ echo "Run single process:"
 ./hello-world > output1.txt;
 
 # Create host file
-batch_hosts=hosts.batch
-rm -rf $batch_hosts
-echo "The AZ_BATCH_NODE_LIST: $AZ_BATCH_NODE_LIST"
-echo "The AZ_BATCH_HOST_LIST: $AZ_BATCH_HOST_LIST"
-echo "The AZ_BATCH_TASK_SHARED_DIR: $AZ_BATCH_TASK_SHARED_DIR"
+#batch_hosts=hosts.batch
+#rm -rf $batch_hosts
+#echo "The AZ_BATCH_NODE_LIST: $AZ_BATCH_NODE_LIST"
+#echo "The AZ_BATCH_HOST_LIST: $AZ_BATCH_HOST_LIST"
+#echo "The AZ_BATCH_TASK_SHARED_DIR: $AZ_BATCH_TASK_SHARED_DIR"
 echo "The AZ_BATCH_NODE_MOUNTS_DIR: $AZ_BATCH_NODE_MOUNTS_DIR"
-IFS=';' read -ra ADDR <<< "$AZ_BATCH_NODE_LIST"
-for i in "${ADDR[@]}"; do echo $i >> $batch_hosts;done
+#IFS=';' read -ra ADDR <<< "$AZ_BATCH_NODE_LIST"
+#for i in "${ADDR[@]}"; do echo $i >> $batch_hosts;done
 # Determine hosts to run on 
-src=$(tail -n1 $batch_hosts)
-dst=$(head -n1 $batch_hosts)
-echo "Src: $src"
-echo "Dst: $dst"
+#src=$(tail -n1 $batch_hosts)
+#dst=$(head -n1 $batch_hosts)
+#echo "Src: $src"
+#echo "Dst: $dst"
 echo "Run two processes:"
 # Run two node MPI tests
-mpirun -np 2 --host $src,$dst --map-by node ./hello-world > output2.txt
+#mpirun -np 2 --host $src,$dst --map-by node ./hello-world > output2.txt
+mpirun -np 2 ./hello-world > output2.txt
