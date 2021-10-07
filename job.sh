@@ -4,6 +4,7 @@ wget http://github.com/larryhan1995/mpitest/raw/main/hello-world.c
 mpicc hello-world.c -o hello-world 
 echo "Run single process:"
 ./hello-world > output1.txt;
+$AZ_BATCH_TASK_SHARED_DIR/hello-world
 
 # Create host file
 #batch_hosts=hosts.batch
@@ -22,4 +23,5 @@ echo "The AZ_BATCH_NODE_MOUNTS_DIR: $AZ_BATCH_NODE_MOUNTS_DIR"
 echo "Run two processes:"
 # Run two node MPI tests
 #mpirun -np 2 --host $src,$dst --map-by node ./hello-world > output2.txt
-mpirun -np 2 --host $AZ_BATCH_HOST_LIST ./hello-world > output2.txt
+mpirun -np 2 --host $AZ_BATCH_HOST_LIST -wdir $AZ_BATCH_TASK_SHARED_DIR $AZ_BATCH_TASK_SHARED_DIR/hello-world > output2.txt
+mpirun -np 2 --host $AZ_BATCH_HOST_LIST ./hello-world > output3.txt
