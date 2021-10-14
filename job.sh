@@ -20,8 +20,9 @@ echo "The AZ_BATCH_NODE_MOUNTS_DIR: $AZ_BATCH_NODE_MOUNTS_DIR"
 #dst=$(head -n1 $batch_hosts)
 #echo "Src: $src"
 #echo "Dst: $dst"
-echo "Run two processes:"
+echo "Run two processes trial 1:"
 # Run two node MPI tests
 #mpirun -np 2 --host $src,$dst --map-by node ./hello-world > output2.txt
 mpirun -np 2 --host $AZ_BATCH_HOST_LIST -wdir $AZ_BATCH_TASK_SHARED_DIR $AZ_BATCH_TASK_SHARED_DIR/hello-world > output2.txt
+echo "Run two processes trial 2:"
 mpirun -np 2 --host $AZ_BATCH_HOST_LIST ./hello-world > output3.txt
