@@ -1,7 +1,7 @@
 cat /proc/cpuinfo
 wget http://github.com/larryhan1995/mpitest/raw/main/hello-world.c 
 #wget http://github.com/larryhan1995/mpitest/raw/main/hostfile
-mpicc hello-world.c -o hello-world 
+# mpicc hello-world.c -o hello-world 
 echo "Run single process:"
 ./hello-world > output1.txt;
 $AZ_BATCH_TASK_SHARED_DIR/hello-world
