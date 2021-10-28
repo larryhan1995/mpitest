@@ -1,4 +1,5 @@
 cd /home/azureuser/lwd/test/3layer
+rm *.dat.*
 echo "check files. File list:"
 ls
 echo "check algo_config:"
