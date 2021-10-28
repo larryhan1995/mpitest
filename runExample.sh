@@ -8,5 +8,8 @@ pwd
 echo "file list:"
 ls
 echo "check PATH: $PATH"
-echo "run single process"
-tmcmc_lwd
+echo "check source file"
+cat /home/azureuser/.bashrc
+
+#echo "run single process"
+#tmcmc_lwd
