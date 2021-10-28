@@ -8,8 +8,7 @@ pwd
 echo "file list:"
 ls
 echo "check PATH: $PATH"
-echo "check source file"
-cat /home/azureuser/.bashrc
-
+export PATH="/home/azureuser/lwd/src/"
+echo "check PATH after: $PATH"
 #echo "run single process"
 #tmcmc_lwd
