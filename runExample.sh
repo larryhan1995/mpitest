@@ -8,7 +8,7 @@ pwd
 echo "file list:"
 ls
 echo "check PATH: $PATH"
-export PATH="/home/azureuser/lwd/src/"
+export PATH=$PATH:/home/azureuser/lwd/src/
 echo "check PATH after: $PATH"
 #echo "run single process"
 #tmcmc_lwd
