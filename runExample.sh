@@ -10,5 +10,5 @@ ls
 echo "check PATH: $PATH"
 export PATH=$PATH:/home/azureuser/lwd/src/
 echo "check PATH after: $PATH"
-echo "run two process"
+echo "run 8 process"
 mpirun -np 8 tmcmc_lwd
