@@ -10,11 +10,11 @@ echo "current location"
 pwd
 echo "file list:"
 ls
-mv algo_config_1.dat algo_config.dat
+mv algo_config_2.dat algo_config.dat
 echo "current configurations:"
 cat algo_config.dat
 echo "check PATH: $PATH"
 export PATH=$PATH:/home/azureuser/lwd/src/
 echo "check PATH after: $PATH"
-echo "run 8 process"
-mpirun -np 8 tmcmc_lwd
+echo "run 4 process"
+mpirun -np 4 tmcmc_lwd
